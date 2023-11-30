@@ -1,0 +1,84 @@
+drone:
+    camera-caliberation:
+        fx: 682.578
+        fy: 682.578
+        px: 482.0
+        py: 302.0
+    
+    camera-rotation:
+        yaw: 0.0
+        pitch: 90.0
+        roll: 90.0
+    
+    camera-translation:
+        x: 0.0
+        y: 0.0
+        z: 50.0
+
+front:
+    camera-caliberation:
+        fx: 682.578
+        fy: 682.578
+        px: 482.0
+        py: 302.0
+    
+    camera-rotation:
+        yaw: 0.0
+        pitch: 90.0
+        roll: 90.0
+    
+    camera-translation:
+        x: 0.0
+        y: 0.0
+        z: 50.0
+
+left:
+    camera-caliberation:
+        fx: 682.578
+        fy: 682.578
+        px: 482.0
+        py: 302.0
+    
+    camera-rotation:
+        yaw: 0.0
+        pitch: 90.0
+        roll: 90.0
+    
+    camera-translation:
+        x: 0.0
+        y: 0.0
+        z: 50.0
+
+right:
+    camera-caliberation:
+        fx: 682.578
+        fy: 682.578
+        px: 482.0
+        py: 302.0
+    
+    camera-rotation:
+        yaw: 0.0
+        pitch: 90.0
+        roll: 90.0
+    
+    camera-translation:
+        x: 0.0
+        y: 0.0
+        z: 50.0
+
+rear:
+    camera-caliberation:
+        fx: 682.578
+        fy: 682.578
+        px: 482.0
+        py: 302.0
+    
+    camera-rotation:
+        yaw: 0.0
+        pitch: 90.0
+        roll: 90.0
+    
+    camera-translation:
+        x: 0.0
+        y: 0.0
+        z: 50.0
