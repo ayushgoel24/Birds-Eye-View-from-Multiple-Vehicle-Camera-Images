@@ -1,6 +1,8 @@
 import tensorflow as tf
 from tensorflow.keras.layers import Concatenate, Conv2D, BatchNormalization
 
+from transformer import TransformerNetwork
+
 class UNetJoiner:
     def __init__(self, filters1=8, kernel_size=(3, 3), activation=tf.nn.relu, use_batch_norm=True, double_skip_connection=False):
         """
@@ -40,7 +42,7 @@ class UNetJoiner:
 
             for i in range(n_inputs):
                 # Assuming SpatialTransformer is a defined layer or function
-                t = SpatialTransformer()(list_of_encoder_layers[i][d], thetas[i])
+                t = TransformerNetwork().transform()(list_of_encoder_layers[i][d], thetas[i])
                 warped_maps.append(t)
                 if self.double_skip_connection:
                     nonwarped_maps.append(list_of_encoder_layers[i][d])
