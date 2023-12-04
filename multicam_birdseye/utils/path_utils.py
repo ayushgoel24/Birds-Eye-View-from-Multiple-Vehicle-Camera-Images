@@ -2,10 +2,10 @@ import importlib
 import os
 import sys
 
-class PathUtils:
+class PathUtil:
 
     @staticmethod
-    def get_abs_path(path):
+    def get_absolute_path(path):
         return os.path.abspath( os.path.expanduser(path) )
     
     @staticmethod
