@@ -22,6 +22,18 @@ validation:
         - ../data/val/right
     label-path: ../data/val/bev+occlusion
     max-samples: 10000
+    class-names: [road, sidewalk, person, car, truck, bus, bike, obstacle, vegetation, occluded]
+
+test:
+    data-path:
+        - ../data/test/front
+        - ../data/test/rear
+        - ../data/test/left
+        - ../data/test/right
+    label-path: ../data/test/bev+occlusion
+    max-samples: 10000
+    class-names: [road, sidewalk, person, car, truck, bus, bike, obstacle, vegetation, occluded]
+    
 
 model:
     path:
