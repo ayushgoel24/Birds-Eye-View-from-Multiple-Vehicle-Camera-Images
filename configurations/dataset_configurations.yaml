@@ -1,0 +1,38 @@
+training:
+    data-path:
+        - ../data/train/front
+        - ../data/train/rear
+        - ../data/train/left
+        - ../data/train/right
+    label-path: ../data/train/bev+occlusion
+    max-samples: 100000
+    batch-size: 5
+    learning-rate: 1e-4
+    epochs: 100
+    class-loss-weights: [0.98684351, 2.2481491, 10.47452063, 4.78351389, 7.01028204, 8.41360361, 10.91633349, 2.38571558, 1.02473193, 2.79359197]
+    early-stopping-patience: 20
+    model-save-interval: 5
+    output-directory: results/model_outputs
+
+validation:
+    data-path:
+        - ../data/val/front
+        - ../data/val/rear
+        - ../data/val/left
+        - ../data/val/right
+    label-path: ../data/val/bev+occlusion
+    max-samples: 10000
+
+model:
+    path:
+    pretrained-weights:
+
+image:
+    shape: [256, 512]
+
+one-hot-palette:
+    data: one_hot_conversion/convert_10.xml
+    label: one_hot_conversion/convert_10+occl.xml
+
+homography:
+    path:
