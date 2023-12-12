@@ -2,7 +2,7 @@ from datetime import datetime
 import os
 import tensorflow
 
-from ...utils import ImageOperationsUtil, PathUtil
+from ...utils import ImageOperationsUtil, MetricUtil, PathUtil
 
 class ModelManager:
     def __init__(self, model_path, image_shape, model_weights=None):

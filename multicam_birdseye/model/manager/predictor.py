@@ -45,7 +45,7 @@ class Predictor(ModelManager):
         self.model.load_weights(self.pretrained_model_weights)
         print(f"Reloaded model from {self.pretrained_model_weights}")
 
-    def run_predictions(self, prediction_directory):
+    def _run_predictions(self, prediction_directory):
         """
         Run predictions on the provided data and save the results to the specified directory.
 
@@ -81,4 +81,4 @@ class Predictor(ModelManager):
         """
         Run the prediction.
         """
-        
+        self._run_predictions()
