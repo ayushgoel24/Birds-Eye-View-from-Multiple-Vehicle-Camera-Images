@@ -1,15 +1,17 @@
 training:
     data-path:
-        - ../data/train/front
-        - ../data/train/rear
-        - ../data/train/left
-        - ../data/train/right
-    label-path: ../data/train/bev+occlusion
+        - ./data/train/front
+        - ./data/train/rear
+        - ./data/train/left
+        - ./data/train/right
+    label-path: ./data/train/labels
     max-samples: 100000
-    batch-size: 5
-    learning-rate: 1e-4
-    epochs: 100
-    class-loss-weights: [0.98684351, 2.2481491, 10.47452063, 4.78351389, 7.01028204, 8.41360361, 10.91633349, 2.38571558, 1.02473193, 2.79359197]
+    batch-size: 8
+    learning-rate: 5e-5
+    weight-decay: 1e-6
+    betas: [0.9, 0.99]
+    epochs: 30
+    class-loss-weights: [0.9582, 3.1412, 8.4923, 4.9151, 6.1152, 5.1206, 10.4339, 2.3857, 2.7937, 1.3591]
     early-stopping-patience: 20
     model-save-interval: 5
     output-directory: results/model_outputs
@@ -20,7 +22,7 @@ validation:
         - ../data/val/rear
         - ../data/val/left
         - ../data/val/right
-    label-path: ../data/val/bev+occlusion
+    label-path: ../data/val/labels
     max-samples: 10000
     class-names: [road, sidewalk, person, car, truck, bus, bike, obstacle, vegetation, occluded]
 
@@ -30,14 +32,14 @@ test:
         - ../data/test/rear
         - ../data/test/left
         - ../data/test/right
-    label-path: ../data/test/bev+occlusion
+    label-path: ../data/test/labels
     max-samples: 10000
     class-names: [road, sidewalk, person, car, truck, bus, bike, obstacle, vegetation, occluded]
     
 
 model:
-    path:
-    pretrained-weights:
+    path: multicam_birdseye/model/u_net/u_net.py # which transformer model to use
+    # pretrained-weights: # This must be populated during the evaluation phase with `optimal_weights.hdf5` in the `Checkpoints` dir
 
 image:
     shape: [256, 512]
@@ -47,4 +49,4 @@ one-hot-palette:
     label: one_hot_conversion/convert_10+occl.xml
 
 homography:
-    path:
+    path: multicam_birdseye/preprocessing/ipm/homography.py
