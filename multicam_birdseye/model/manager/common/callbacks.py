@@ -1,15 +1,11 @@
+'''
+Author: Ayush Goel (aygoel@seas.upenn.edu)
+'''
+
 import os
 import tensorflow
 
 class TrainerCallbacks:
-
-    # TODO: get from Cache Manager
-    # @staticmethod
-    # def _get_tensorboard_log_dir():
-    #     return os.path.join(
-    #         "logs",
-    #         datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-    #     )
     
     @staticmethod
     def create_tensorboard_callback(tensorboard_dir=None):
@@ -30,7 +26,7 @@ class TrainerCallbacks:
     @staticmethod
     def create_best_model_checkpoint_callback(checkpoint_dir=None):
         return tensorflow.keras.callbacks.ModelCheckpoint(
-            os.path.join(checkpoint_dir, "best_weights.hdf5"), 
+            os.path.join(checkpoint_dir, "optimal_weights.hdf5"), 
             save_best_only=True, 
             monitor="val_mean_io_u_with_one_hot_labels", 
             mode="max",
